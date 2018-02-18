@@ -1,0 +1,16 @@
+<div class="todo">
+  <div class="todo-search-container">
+    <label>
+      <input class="todo-input-box"
+           [(ngModel)] = "inputText"
+           />
+    </label>
+    <input class="todo-search-button" type="button" (click) = "AddItem()" value="Add"/>
+  </div>
+  <div class="todo-item-container" [@itemEnterAnimation]="todoList.length">
+    <div class="todo-item" *ngFor="let item of todoList;let i = index">
+      <div class="todo-item-text">{{item}}</div>
+      <div class="todo-item-close" (click)="RemoveItem(i)">X</div>
+    </div>
+  </div>
+</div>
